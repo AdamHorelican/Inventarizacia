@@ -17,8 +17,19 @@ namespace Invetarizácia
             InitializeComponent();
         }
 
-       
-       
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            form_item form = new form_item();
+            form.ShowDialog();
+        }
+
+
+
 
         // 160, 113, 255
     }
