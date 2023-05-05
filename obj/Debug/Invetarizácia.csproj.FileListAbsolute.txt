@@ -1,0 +1,11 @@
+C:\Users\horel_4dd4786\OneDrive\Desktop\C#\Invetarizácia\bin\Debug\Invetarizácia.exe.config
+C:\Users\horel_4dd4786\OneDrive\Desktop\C#\Invetarizácia\bin\Debug\Invetarizácia.exe
+C:\Users\horel_4dd4786\OneDrive\Desktop\C#\Invetarizácia\bin\Debug\Invetarizácia.pdb
+C:\Users\horel_4dd4786\OneDrive\Desktop\C#\Invetarizácia\obj\Debug\Invetarizácia.csproj.AssemblyReference.cache
+C:\Users\horel_4dd4786\OneDrive\Desktop\C#\Invetarizácia\obj\Debug\Invetarizácia.csproj.SuggestedBindingRedirects.cache
+C:\Users\horel_4dd4786\OneDrive\Desktop\C#\Invetarizácia\obj\Debug\Invetarizácia.Form1.resources
+C:\Users\horel_4dd4786\OneDrive\Desktop\C#\Invetarizácia\obj\Debug\Invetarizácia.Properties.Resources.resources
+C:\Users\horel_4dd4786\OneDrive\Desktop\C#\Invetarizácia\obj\Debug\Invetarizácia.csproj.GenerateResource.cache
+C:\Users\horel_4dd4786\OneDrive\Desktop\C#\Invetarizácia\obj\Debug\Invetarizácia.csproj.CoreCompileInputs.cache
+C:\Users\horel_4dd4786\OneDrive\Desktop\C#\Invetarizácia\obj\Debug\Invetarizácia.exe
+C:\Users\horel_4dd4786\OneDrive\Desktop\C#\Invetarizácia\obj\Debug\Invetarizácia.pdb
