@@ -9,19 +9,16 @@ namespace Invetarizácia
 {
     internal class Item
     {
-        public int Id { get; set; }
         public string Meno { get; set; }
         public string Nazov { get; set; }
         public string Miesto { get; set; }
-        public int Kusy { get; set; }
-        public Item(int id, string meno, string nazov, string miesto, int kusy)
+        public string Kusy { get; set; }
+        public Item(string meno, string nazov, string miesto, string kusy)
         {
-            Id = id;
             Meno = meno;
             Nazov = nazov;
             Miesto = miesto;
             Kusy = kusy;
-                
         }
         
 

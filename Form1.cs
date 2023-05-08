@@ -17,15 +17,20 @@ namespace Invetarizácia
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void Display()
         {
-
+            Dbitem.DisplayAndSearch("SELECT id, meno, názov, miesto, kusy FROM inventarizacia", dataGridView1);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            form_item form = new form_item();
+            form_item form = new form_item(this);
             form.ShowDialog();
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            Display();
         }
 
 
