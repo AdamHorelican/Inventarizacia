@@ -20,7 +20,6 @@ namespace Invetarizácia
             Miesto = miesto;
             Kusy = kusy;
         }
-        
 
     }
 }

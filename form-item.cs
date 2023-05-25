@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,30 +27,43 @@ namespace Invetarizácia
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             if(textBox1.Text.Trim().Length < 3)
             {
                 MessageBox.Show("Meno nie je vyplnené.");
                 return;
             }
-            if (textBox1.Text.Trim().Length < 2)
+            else if (textBox2.Text.Trim().Length < 2)
             {
                 MessageBox.Show("Názov nie je vyplnený.");
                 return;
             }
-            if (textBox1.Text.Trim().Length < 1)
+            else if (textBox3.Text.Trim().Length < 1)
             {
                 MessageBox.Show("Miesto nie je vyplnené.");
                 return;
             }
-            if (textBox1.Text.Trim().Length < 1)
+            else if (textBox4.Text.Trim().Length < 1)
             {
                 MessageBox.Show("Kusy nie sú vyplnené.");
                 return;
             }
-            if(button1.Text == "Uložiť")
+            else
             {
-                Item std = new Item(textBox1.Text.Trim(), textBox2.Text.Trim(), textBox3.Text.Trim(), textBox4.Text.Trim());
-                Dbitem.AddItem(std);
+                string sql = $"INSERT INTO inventarizacia(id, meno, názov, miesto, kusy) VALUES (NULL, '{textBox1.Text}', '{textBox2.Text}', '{textBox3.Text}', '{textBox4.Text}')";
+                MySqlConnection con = Dbitem.GetConnection();
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                cmd.CommandType = System.Data.CommandType.Text;
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Added Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Item not added. \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                con.Close();
                 Clear();
             }
             _parent.Display();

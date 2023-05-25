@@ -13,7 +13,7 @@ namespace Invetarizácia
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=invent.vybrat.eu;port=3306;username=c52invent;password=sR9#GsjMRf;database=c52invent";
+            string sql = "datasource=invent.vybrat.eu;port=3306;username=c52invent;password=sR9#GsjMRf;database=c52invent;";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {
@@ -24,28 +24,6 @@ namespace Invetarizácia
                 MessageBox.Show("MySql Connection! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return con;
-
-        }
-        public static void AddItem(Item std)
-        {
-            string sql = "INSERT INTO inventarizacia VALUES (NULL, @ItemMeno, @ItemNazov, @ItemMiesto, @ItemKusy, NULL)";
-            MySqlConnection con = GetConnection();
-            MySqlCommand cmd = new MySqlCommand(sql, con);
-            cmd.CommandType = System.Data.CommandType.Text; //
-            cmd.Parameters.Add("@ItemMeno", MySqlDbType.VarChar).Value = std.Meno;
-            cmd.Parameters.Add("@ItemNazov", MySqlDbType.VarChar).Value = std.Nazov;
-            cmd.Parameters.Add("@ItemMiesto", MySqlDbType.VarChar).Value = std.Miesto;
-            cmd.Parameters.Add("@ItemKusy", MySqlDbType.VarChar).Value = std.Kusy;
-            try
-            {
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Added Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch(MySqlException ex)
-            {
-                MessageBox.Show("Item not added. \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            con.Close();
         }
         public static void UpdateItem(Item std, string id)
         {
