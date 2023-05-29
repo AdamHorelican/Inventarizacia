@@ -114,3 +114,5 @@ C:\Users\horel_4dd4786\OneDrive\Desktop\C#\Invetarizácia\obj\Debug\Invetarizác
 C:\Users\horel_4dd4786\OneDrive\Desktop\C#\Invetarizácia\obj\Debug\Invetarizácia.csproj.CopyComplete
 C:\Users\horel_4dd4786\OneDrive\Desktop\C#\Invetarizácia\obj\Debug\Invetarizácia.Menu.resources
 C:\Users\horel_4dd4786\OneDrive\Desktop\C#\Invetarizácia\obj\Debug\Invetarizácia.Register.resources
+C:\Users\ASUS\source\repos\Inventarizacia\obj\Debug\Invetarizácia.Menu.resources
+C:\Users\ASUS\source\repos\Inventarizacia\obj\Debug\Invetarizácia.Register.resources
