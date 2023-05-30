@@ -46,12 +46,22 @@ namespace Invetarizácia
                     while (reader.Read())
                     {
                         string menoVDB = reader.GetString(reader.GetOrdinal("meno"));
+                        string hesloVDB = reader.GetString(reader.GetOrdinal("heslo"));
 
-                        if (zadaneMeno == menoVDB)
+                        if (zadaneMeno == menoVDB && zadaneHeslo == hesloVDB)
                         {
-                            Console.WriteLine("Meno sa zhoduje!");
-                            Register form = new Register();
-                            form.ShowDialog();
+                            if (zadaneMeno == "admin" && zadaneHeslo == "admin")
+                            {
+                                Console.WriteLine("Meno sa zhoduje!");
+                                Register form = new Register();
+                                form.ShowDialog();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Meno sa zhoduje!");
+                                Form1 form = new Form1();
+                                form.ShowDialog();
+                            }
                         }
                         else
                         {
