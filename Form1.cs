@@ -43,6 +43,12 @@ namespace Invetarizácia
 
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Dbitem.DisplayAndSearch("SELECT id, meno, názov, miesto, kusy FROM inventarizacia WHERE miesto like '%" + textBox1.Text.Trim() + "%' or názov like '%" + textBox1.Text.Trim() + "%' or meno like '%" + textBox1.Text.Trim() + "%' ", dataGridView1);
+        }
+
+
 
 
 
