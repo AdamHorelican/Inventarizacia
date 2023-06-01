@@ -10,42 +10,25 @@ using System.Windows.Forms;
 
 namespace Invetarizácia
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
         }
-
+        
         public void Display()
         {
             Dbitem.DisplayAndSearch("SELECT id, meno, názov, miesto, kusy FROM inventarizacia", dataGridView1);
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            form_item form = new form_item(this);
-            form.ShowDialog();
-        }
-
-        private void Form1_Shown(object sender, EventArgs e)
+        private void Form2_Shown(object sender, EventArgs e)
         {
             Display();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-        // 160, 113, 255
     }
 }

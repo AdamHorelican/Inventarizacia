@@ -23,7 +23,7 @@ namespace Invetarizácia
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
+            Form2 form = new Form2();
             form.ShowDialog();
         }
 
@@ -76,6 +76,11 @@ namespace Invetarizácia
             }
 
             con.Close();
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
