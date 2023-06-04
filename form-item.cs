@@ -14,12 +14,22 @@ namespace Invetarizácia
     public partial class form_item : Form
     {
         private readonly Form1 _parent;
+        public string id, meno, nazov, miesto, kusy;
         public form_item(Form1 parent)
         {
             InitializeComponent();
             _parent = parent;
         }
 
+        public void UpdateInfo()
+        {
+            label1.Text = "Upraviť item";
+            button1.Text = "Upraviť";
+            textBox1.Text = meno;
+            textBox2.Text = nazov;
+            textBox3.Text = miesto;
+            textBox4.Text = kusy;
+        }
         public void Clear()
         {
             textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = string.Empty;
@@ -48,7 +58,7 @@ namespace Invetarizácia
                 MessageBox.Show("Kusy nie sú vyplnené.");
                 return;
             }
-            else
+            else if (button1.Text == "Uložiť")
             {
                 string sql = $"INSERT INTO inventarizacia(id, meno, názov, miesto, kusy) VALUES (NULL, '{textBox1.Text}', '{textBox2.Text}', '{textBox3.Text}', '{textBox4.Text}')";
                 MySqlConnection con = Dbitem.GetConnection();
@@ -65,6 +75,11 @@ namespace Invetarizácia
                 }
                 con.Close();
                 Clear();
+            }
+            else if (button1.Text == "Upraviť")
+            {
+                Item std = new Item(textBox1.Text.Trim(), textBox2.Text.Trim(), textBox3.Text.Trim(), textBox4.Text.Trim());
+                Dbitem.UpdateItem(std, id);
             }
             _parent.Display();
         }

@@ -198,3 +198,4 @@ C:\Users\Maria Mikulova\Desktop\inv\obj\Debug\Invetarizácia.csproj.CoreCompileI
 C:\Users\Maria Mikulova\Desktop\inv\obj\Debug\Invetarizácia.csproj.CopyComplete
 C:\Users\Maria Mikulova\Desktop\inv\obj\Debug\Invetarizácia.exe
 C:\Users\Maria Mikulova\Desktop\inv\obj\Debug\Invetarizácia.pdb
+C:\Users\ASUS\source\repos\Inventarizacia\obj\Debug\Invetarizácia.Form2.resources

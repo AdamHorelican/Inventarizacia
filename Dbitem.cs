@@ -27,10 +27,11 @@ namespace Invetarizácia
         }
         public static void UpdateItem(Item std, string id)
         {
-            string sql = "UPDATE inventarizacia SET meno = @ItemMeno, názov = @ItemNazov, miesto = @Miesto, kusy = @ItemKusy WHERE id = @ItemId";
+            string sql = "UPDATE inventarizacia SET meno = @ItemMeno, názov = @ItemNazov, miesto = @ItemMiesto, kusy = @ItemKusy WHERE id = @ItemId";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
-            cmd.CommandType = System.Data.CommandType.Text; //
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.Parameters.Add("@ItemId", MySqlDbType.VarChar).Value = id;
             cmd.Parameters.Add("@ItemMeno", MySqlDbType.VarChar).Value = std.Meno;
             cmd.Parameters.Add("@ItemNazov", MySqlDbType.VarChar).Value = std.Nazov;
             cmd.Parameters.Add("@ItemMiesto", MySqlDbType.VarChar).Value = std.Miesto;
@@ -48,11 +49,11 @@ namespace Invetarizácia
         }
         public static void DeleteItem(string id)
         {
-            string sql = "DELETE FROM inventarizacia WHERE id = @ItemId";
+            string sql = $"DELETE FROM inventarizacia WHERE id = @ItemId";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.Parameters.Add("@StudentId", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@ItemId", MySqlDbType.VarChar).Value = id;
             try
             {
                 cmd.ExecuteNonQuery();
