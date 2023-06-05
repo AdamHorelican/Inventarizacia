@@ -23,8 +23,10 @@ namespace Invetarizácia
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form2 form = new Form2();
             form.ShowDialog();
+            this.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -53,14 +55,18 @@ namespace Invetarizácia
                             if (zadaneMeno == "admin" && zadaneHeslo == "admin")
                             {
                                 Console.WriteLine("Meno sa zhoduje!");
+                                this.Hide();
                                 Register form = new Register();
                                 form.ShowDialog();
+                                this.Show();
                             }
                             else
                             {
                                 Console.WriteLine("Meno sa zhoduje!");
+                                this.Hide();
                                 Form1 form = new Form1();
                                 form.ShowDialog();
+                                this.Show();
                             }
                         }
                         else

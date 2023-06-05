@@ -56,7 +56,7 @@ namespace Invetarizácia
             }
             if (e.ColumnIndex == 1)
             {
-                if (MessageBox.Show("?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+                if (MessageBox.Show("Naozaj chcete vymazať tento údaj?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     Dbitem.DeleteItem(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
                     Display();
