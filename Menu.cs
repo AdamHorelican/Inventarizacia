@@ -20,6 +20,10 @@ namespace Invetarizácia
            
 
         }
+        public string TextBox1Value
+        {
+            get { return textBox1.Text; }
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -64,9 +68,11 @@ namespace Invetarizácia
                             {
                                 Console.WriteLine("Meno sa zhoduje!");
                                 this.Hide();
-                                Form1 form = new Form1();
-                                form.ShowDialog();
-                                this.Show();
+                                Form1 form1 = new Form1();
+                                form1.TextBox1Value = textBox1.Text; // Prenesie hodnotu textBox1 do Form1
+                                form1.Show();
+                                
+
                             }
                         }
                         else

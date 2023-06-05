@@ -19,7 +19,10 @@ namespace Invetarizácia
         {
             InitializeComponent();
             _parent = parent;
+            TextBox1Value = _parent.TextBox1Value;
+            textBox1.Text = TextBox1Value;
         }
+        public string TextBox1Value { get; set; }
 
         public void UpdateInfo()
         {
@@ -32,7 +35,7 @@ namespace Invetarizácia
         }
         public void Clear()
         {
-            textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = string.Empty;
+            textBox2.Text = textBox3.Text = textBox4.Text = string.Empty;
         }
 
         private void button1_Click(object sender, EventArgs e)

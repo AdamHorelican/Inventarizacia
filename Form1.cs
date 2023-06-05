@@ -18,16 +18,19 @@ namespace Invetarizácia
             InitializeComponent();
             form = new form_item(this);
         }
-
+        public string TextBox1Value { get; set; }
         public void Display()
         {
             Dbitem.DisplayAndSearch("SELECT id, meno, názov, miesto, kusy FROM inventarizacia", dataGridView1);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
-            form.Clear();
-            form.ShowDialog();
+            this.Hide();
+            form_item formItem = new form_item(this);
+            formItem.TextBox1Value = textBox1.Text; // Prenesie hodnotu textBox1 z Form1 do form_item
+            formItem.ShowDialog();
+            this.Show();
         }
 
         private void Form1_Shown(object sender, EventArgs e)
