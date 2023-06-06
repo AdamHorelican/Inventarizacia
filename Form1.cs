@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Invetarizácia
 {
@@ -45,27 +46,37 @@ namespace Invetarizácia
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 0)
-            {
-                form.Clear();
-                form.id = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                form.meno = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                form.nazov = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                form.miesto = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-                form.kusy = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-                form.UpdateInfo();
-                form.ShowDialog();
-                return;
-            }
-            if (e.ColumnIndex == 1)
-            {
-                if (MessageBox.Show("Naozaj chcete vymazať tento údaj?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+            string selectedName = dataGridView1.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
+            string targetName = TextBox1Value;
+            if (selectedName == targetName)
                 {
-                    Dbitem.DeleteItem(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
-                    Display();
+                    if (e.ColumnIndex == 0)
+                    {
+                        form.Clear();
+                        form.id = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        form.meno = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                        form.nazov = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                        form.miesto = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                        form.kusy = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+                        form.UpdateInfo();
+                        form.ShowDialog();
+                        return;
+                    }
+
+                    if (e.ColumnIndex == 1)
+                    {
+                        if (MessageBox.Show("Naozaj chcete vymazať tento údaj?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+                        {
+                            Dbitem.DeleteItem(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+                            Display();
+                        }
+                        return;
+                    }
                 }
-                return;
-            }
+                else
+                {
+                MessageBox.Show("Tieto údaje nemôžete zmeniť ani vymazať, pretože Vám nepatria!!!");
+                }
         }
 
 
