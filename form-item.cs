@@ -21,6 +21,7 @@ namespace Invetarizácia
             _parent = parent;
             TextBox1Value = _parent.TextBox1Value;
             textBox1.Text = TextBox1Value;
+            textBox4.KeyPress += TextBox4_KeyPress; // Pridaná udalosť pre kontrolu stlačených kláves
         }
         public string TextBox1Value { get; set; }
 
@@ -40,8 +41,8 @@ namespace Invetarizácia
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            if(textBox1.Text.Trim().Length < 3)
+
+            if (textBox1.Text.Trim().Length < 3)
             {
                 MessageBox.Show("Meno nie je vyplnené.");
                 return;
@@ -85,6 +86,15 @@ namespace Invetarizácia
                 Dbitem.UpdateItem(std, id);
             }
             _parent.Display();
+        }
+
+        private void TextBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Ak stlačený kľúč nie je číslo ani Backspace, zastav udalosť KeyPress
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
