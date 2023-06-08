@@ -79,10 +79,5 @@ namespace Invetarizácia
                 }
         }
 
-
-
-
-
-        // 160, 113, 255
     }
 }

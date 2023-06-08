@@ -23,8 +23,10 @@ namespace Invetarizácia
             textBox1.Text = textBox2.Text = string.Empty;
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
+
             if (textBox1.Text.Trim().Length < 3)
             {
                 MessageBox.Show("Meno nie je vyplnené.");
@@ -37,6 +39,7 @@ namespace Invetarizácia
             }
             else
             {
+
                 string sql = $"INSERT INTO login(meno, heslo) VALUES ('{textBox1.Text}', '{textBox2.Text}')";
                 MySqlConnection con = Dbitem.GetConnection();
                 MySqlCommand cmd = new MySqlCommand(sql, con);
@@ -52,6 +55,7 @@ namespace Invetarizácia
                 }
                 con.Close();
                 Clear();
+
             }
         }
 

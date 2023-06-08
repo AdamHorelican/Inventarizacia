@@ -17,8 +17,8 @@ namespace Invetarizácia
         public Menu()
         {
             InitializeComponent();
-           
 
+            
         }
         public string TextBox1Value
         {
@@ -41,6 +41,7 @@ namespace Invetarizácia
 
             string zadaneMeno = textBox1.Text;
             string zadaneHeslo = textBox2.Text;
+           
 
             cmd.Parameters.AddWithValue("@Meno", zadaneMeno);
             cmd.Parameters.AddWithValue("@Heslo", zadaneHeslo);
@@ -90,9 +91,6 @@ namespace Invetarizácia
             con.Close();
         }
 
-        private void Menu_Load(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
